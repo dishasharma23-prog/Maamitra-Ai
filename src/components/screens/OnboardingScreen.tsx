@@ -37,7 +37,7 @@ export function OnboardingScreen({
   return (
     <div className="flex flex-col h-full">
       <div className="px-6 pt-12 pb-4 flex-shrink-0 flex flex-col gap-5">
-        <BackButton onClick={onBack} />
+        <BackButton onClick={onBack} label={t(language, "back")} />
         <div className="flex flex-col gap-1.5">
           <PageHeading>{t(language, "onboardingHeading")}</PageHeading>
           <HelperText>{t(language, "onboardingSupport")}</HelperText>
@@ -49,7 +49,7 @@ export function OnboardingScreen({
       <div className="flex-1 overflow-y-auto px-6 py-5 flex flex-col gap-6">
         <TextInput
           label={t(language, "yourName")}
-          placeholder="e.g. Sunita Devi"
+          placeholder={t(language, "namePlaceholder")}
           value={name}
           onChange={setName}
         />

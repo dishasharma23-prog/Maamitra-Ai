@@ -30,7 +30,15 @@ const LANGUAGES = [
 
 export default function App() {
   const [screen, setScreen] = useState<Screen>("welcome");
-  const [language, setLanguage] = useState<Language>("hi");
+  const [language, setLanguageState] = useState<Language>(() => {
+    const saved = localStorage.getItem("preferredLanguage") as Language;
+    return saved || "hi";
+  });
+
+  const setLanguage = (lang: Language) => {
+    setLanguageState(lang);
+    localStorage.setItem("preferredLanguage", lang);
+  };
   const [mother, setMother] = useState<Mother | null>(null);
   const [currentCheckIn, setCurrentCheckIn] = useState<Partial<CheckIn> | null>(null);
   const [forceTapMode, setForceTapMode] = useState(false);

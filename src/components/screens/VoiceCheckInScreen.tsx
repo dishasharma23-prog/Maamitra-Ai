@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import { BackButton } from "../ui/BackButton";
 import { PageHeading } from "../ui/PageHeading";
 import { HelperText } from "../ui/HelperText";
@@ -104,7 +104,7 @@ export function VoiceCheckInScreen({
            <BackButton onClick={() => {
              if (tapStep === "symptoms") setTapStep("initial");
              else setIsTapMode(false);
-           }} />
+           }} label={t(language, "back")} />
            <span className="text-sm font-semibold text-teal tracking-widest uppercase">{t(language, "quickCheckin")}</span>
         </div>
 
@@ -169,7 +169,7 @@ export function VoiceCheckInScreen({
     <div className="flex flex-col h-full">
       <div className="px-6 pt-12 pb-4 flex-shrink-0 flex flex-col gap-5">
         {(state === "ready" || state === "error") ? (
-          <BackButton onClick={onBack} />
+          <BackButton onClick={onBack} label={t(language, "back")} />
         ) : (
           <div className="h-11" />
         )}
@@ -194,7 +194,7 @@ export function VoiceCheckInScreen({
               {state === "ready" && t(language, "voiceReady")}
               {state === "listening" && t(language, "voiceListening")}
               {state === "processing" && t(language, "voiceProcessing")}
-              {state === "success" && "Done"}
+              {state === "success" && t(language, "done")}
             </p>
             {state === "error" && (
               <div className="flex flex-col items-center gap-4 mt-2">

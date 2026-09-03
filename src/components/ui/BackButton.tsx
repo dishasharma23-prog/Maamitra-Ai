@@ -1,12 +1,12 @@
 const SANS = "'Noto Sans', sans-serif";
 
-export function BackButton({ onClick }: { onClick: () => void }) {
+export function BackButton({ onClick, label = "Back" }: { onClick: () => void; label?: string }) {
   return (
     <button
       onClick={onClick}
       style={{ fontFamily: SANS, minHeight: 44 }}
       className="flex items-center gap-1.5 text-teal/60 hover:text-teal transition-colors -ml-1"
-      aria-label="Go back"
+      aria-label={label}
     >
       <svg
         width="18"
@@ -23,7 +23,7 @@ export function BackButton({ onClick }: { onClick: () => void }) {
           strokeLinejoin="round"
         />
       </svg>
-      <span className="text-sm font-medium">Back</span>
+      <span className="text-sm font-medium">{label}</span>
     </button>
   );
 }

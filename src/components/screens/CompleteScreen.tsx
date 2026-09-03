@@ -20,24 +20,6 @@ export function CompleteScreen({
   onContinue: () => void;
 }) {
   const langEntry = languages.find((l) => l.code === language);
-  const greeting =
-    language === "hi" || language === "mr"
-      ? "नमस्ते"
-      : language === "bn"
-      ? "নমস্কার"
-      : language === "te"
-      ? "నమస్కారం"
-      : language === "ta"
-      ? "வணக்கம்"
-      : language === "kn"
-      ? "ನಮಸ್ಕಾರ"
-      : language === "ml"
-      ? "നമസ്കാരം"
-      : language === "gu"
-      ? "નમસ્તે"
-      : language === "pa"
-      ? "ਸਤ ਸ੍ਰੀ ਅਕਾਲ"
-      : "Welcome";
 
   return (
     <div className="flex flex-col h-full items-center justify-center px-8 pb-16 gap-8">
@@ -62,7 +44,7 @@ export function CompleteScreen({
             style={{ fontFamily: INDIC_FONT_STACK }}
             className="text-2xl font-semibold text-teal"
           >
-            {greeting}, {motherData.name}
+            {t(language, "welcomeGreeting")}, {motherData.name}
           </p>
           <h2
             style={{ fontFamily: SERIF }}

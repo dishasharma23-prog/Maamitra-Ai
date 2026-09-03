@@ -25,7 +25,7 @@ export function LanguageScreen({
   return (
     <div className="flex flex-col h-full">
       <div className="px-6 pt-12 pb-5 flex-shrink-0 flex flex-col gap-5">
-        <BackButton onClick={onBack} />
+        <BackButton onClick={onBack} label={t(selectedLang, "back")} />
         <PageHeading>
           {t(selectedLang, "languageHeading")}
         </PageHeading>

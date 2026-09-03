@@ -37,10 +37,10 @@ export function HomeScreen({
           <p className="text-sm text-foreground flex items-start gap-2">
             <svg className="w-5 h-5 text-teal shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
             <span className="leading-snug">
-              <strong className="block mb-0.5">Update from your ASHA Worker</strong>
-              {latestAction.type === 'contact' && "They have reached out to you recently. Check your messages/calls."}
-              {latestAction.type === 'visit' && "They have planned a follow-up visit to check on you."}
-              {latestAction.type === 'refer' && "They have issued a medical referral. Please see the doctor."}
+              <strong className="block mb-0.5">{t(language, "ashaUpdateTitle")}</strong>
+              {latestAction.type === 'contact' && t(language, "ashaActionContact")}
+              {latestAction.type === 'visit' && t(language, "ashaActionVisit")}
+              {latestAction.type === 'refer' && t(language, "ashaActionRefer")}
             </span>
           </p>
         </div>
