@@ -1,0 +1,10 @@
+{
+  "description": "A voice-first maternal care app guiding Indian mothers through pregnancy and postpartum with accessible check-ins and personalized support in multiple languages.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
